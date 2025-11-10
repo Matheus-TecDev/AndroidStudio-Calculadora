@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Imagem da calculadora (centralizada) -->
+    <ImageView
+        android:id="@+id/imgCalculator"
+        android:layout_width="140dp"
+        android:layout_height="200dp"
+        android:src="@drawable/calculator"
+        android:contentDescription="Calculadora"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/edtFirstNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <!-- Campo de texto 1 -->
+    <EditText
+        android:id="@+id/edtFirstNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Primeiro número"
+        android:inputType="numberDecimal"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="24dp"
+        android:padding="12dp"
+        android:backgroundTint="#AAAAAA"
+        app:layout_constraintTop_toBottomOf="@id/imgCalculator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo de texto 2 -->
+    <EditText
+        android:id="@+id/edtSecondNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Segundo número"
+        android:inputType="numberDecimal"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"
+        android:backgroundTint="#AAAAAA"
+        app:layout_constraintTop_toBottomOf="@id/edtFirstNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Resultado: —"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintTop_toBottomOf="@id/edtSecondNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Linha inferior com ícones das operações -->
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvResult"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Soma -->
+        <ImageButton
+            android:id="@+id/btnAdd"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginHorizontal="12dp"
+            android:src="@drawable/ic_add_big"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="+"
+            android:scaleType="centerInside"
+            android:tint="@android:color/black" />
+
+        <!-- Subtração -->
+        <ImageButton
+            android:id="@+id/btnSub"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginHorizontal="12dp"
+            android:src="@drawable/ic_sub_big"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="-"
+            android:scaleType="centerInside"
+            android:tint="@android:color/black" />
+
+        <!-- Multiplicação -->
+        <ImageButton
+            android:id="@+id/btnMul"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginHorizontal="12dp"
+            android:src="@drawable/ic_mul_big"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="×"
+            android:scaleType="centerInside"
+            android:tint="@android:color/black" />
+
+        <!-- Divisão -->
+        <ImageButton
+            android:id="@+id/btnDiv"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginHorizontal="12dp"
+            android:src="@drawable/ic_div_big"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="÷"
+            android:scaleType="centerInside"
+            android:tint="@android:color/black" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

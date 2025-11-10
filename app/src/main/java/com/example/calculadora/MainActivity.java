@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.calculadora;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
